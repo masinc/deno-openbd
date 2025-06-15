@@ -34,6 +34,44 @@ OpenBD（Open BibliographyData）は、
 OpenBD APIの詳細仕様については、 @docs/openbd-api-specification.md
 を参照してください。
 
+## コーディングガイドライン
+
+### ライブラリ import 規約
+
+```typescript
+// Zod v4 (必須) - v3のimportは禁止
+import { z } from "zod/v4"; // ✅ 正しい
+// import { z } from "zod";  // ❌ v3なので禁止
+
+// XML Parser
+import { XMLParser } from "fast-xml-parser";
+
+// Error handling
+import type { Result } from "neverthrow";
+import { err, ok } from "neverthrow";
+
+// テスト
+import { assert, assertEquals } from "@std/assert";
+```
+
+### コーディングスタイル
+
+1. **関数設計**
+   - 純粋関数を優先
+   - 副作用は最小限に
+   - 高階関数とパイプライン処理を活用
+   - 部分適用とカリー化を適切に使用
+
+2. **エラー処理**
+   - Result型パターンの採用 (`Result<T, E>`)
+   - 例外は境界でのみキャッチ
+   - エラーは値として扱う
+
+3. **テスト戦略**
+   - 純粋関数の単体テスト優先
+   - プロパティベーステスト活用
+   - 統合テストは最小限に
+
 ## 開発とテスト
 
 詳細については、 @docs/release.md を参照してください。
