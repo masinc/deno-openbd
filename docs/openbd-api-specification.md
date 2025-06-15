@@ -2,7 +2,8 @@
 
 ## 概要
 
-OpenBD（Open Bibliography Data）は、日本国内で流通する書籍の書誌情報・書影を無料で提供するWebAPIサービスです。
+OpenBD（Open Bibliography
+Data）は、日本国内で流通する書籍の書誌情報・書影を無料で提供するWebAPIサービスです。
 
 - 開発者: Calil および Hanmoto.com
 - 収録タイトル: 約760,000タイトル
@@ -12,6 +13,7 @@ OpenBD（Open Bibliography Data）は、日本国内で流通する書籍の書�
 ## APIエンドポイント
 
 ### 基本URL
+
 ```
 https://api.openbd.jp/v1/
 ```
@@ -19,23 +21,28 @@ https://api.openbd.jp/v1/
 ### 利用可能なエンドポイント
 
 #### 1. `/get` - 書誌情報取得
+
 ```
 GET /v1/get?isbn={ISBN}[,{ISBN}...]
 ```
 
 **パラメータ:**
+
 - `isbn`: ISBN-10またはISBN-13（カンマ区切りで複数指定可能）
 
 **レスポンス:**
+
 - 配列形式のJSON
 - 各要素は書籍情報オブジェクトまたは`null`（該当書籍なしの場合）
 
 #### 2. `/coverage` - 収録範囲取得
+
 ```
 GET /v1/coverage
 ```
 
 #### 3. `/schema` - JSONスキーマ取得
+
 ```
 GET /v1/schema
 ```
@@ -43,6 +50,7 @@ GET /v1/schema
 ## レスポンス構造
 
 ### 成功時のレスポンス
+
 ```json
 [
   {
@@ -67,13 +75,16 @@ GET /v1/schema
 ```
 
 ### エラー時のレスポンス
+
 - 該当書籍が見つからない場合: `[null]`
 - 複数ISBN指定時: 該当なしの部分は`null`
 
 ## データ構造詳細
 
 ### summary フィールド
+
 基本的な書籍情報（必須フィールド）:
+
 - `isbn`: ISBN-13
 - `title`: 書籍タイトル
 - `volume`: 巻数
@@ -84,14 +95,18 @@ GET /v1/schema
 - `author`: 著者名
 
 ### onix フィールド
+
 JPRO-onix準拠の詳細書誌データ:
+
 - `DescriptiveDetail`: 書誌詳細情報
 - `CollateralDetail`: 関連情報
 - `PublishingDetail`: 出版情報
 - `ProductSupply`: 供給情報
 
 ### hanmoto フィールド
+
 Hanmoto.com由来の追加データ:
+
 - 出版社からの詳細情報
 - 販売情報
 - その他の補足データ
@@ -100,7 +115,8 @@ Hanmoto.com由来の追加データ:
 
 1. **利用目的**: 書籍の紹介・宣伝目的に限定
 2. **データ改変**: 取得したデータの改変は禁止
-3. **データ更新**: 新刊情報は変更・削除される可能性があるため、定期的な更新を推奨
+3. **データ更新**:
+   新刊情報は変更・削除される可能性があるため、定期的な更新を推奨
 4. **レート制限**: 明示的な制限は不明（要確認）
 
 ## エラーハンドリング

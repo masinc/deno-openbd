@@ -31,7 +31,8 @@ OpenBD（Open BibliographyData）は、
 
 ## API仕様
 
-OpenBD APIの詳細仕様については、 @docs/openbd-api-specification.md を参照してください。
+OpenBD APIの詳細仕様については、 @docs/openbd-api-specification.md
+を参照してください。
 
 ## 開発とテスト
 
