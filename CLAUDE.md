@@ -29,6 +29,10 @@ OpenBD（Open BibliographyData）は、
 - HTTPクライアント: Denoの組み込み`fetch`
 - テストフレームワーク: Denoの組み込みテスト機能
 
+## API仕様
+
+OpenBD APIの詳細仕様については、 @docs/openbd-api-specification.md を参照してください。
+
 ## 開発とテスト
 
 詳細については、 @docs/release.md を参照してください。
