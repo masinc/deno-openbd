@@ -1,6 +1,6 @@
 {
   "name": "@masinc/openbd",
-  "version": "0.1.202506151306",
+  "version": "0.2.202506151357",
   "exports": "./mod.ts",
   "tasks": {
     "dev": "deno test --watch src/ mod_test.ts",
