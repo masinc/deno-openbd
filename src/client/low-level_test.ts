@@ -50,10 +50,12 @@ Deno.test("fetchBooksByISBN - single ISBN success", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response(JSON.stringify([mockBookResponse[0]]), {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      })),
+      Promise.resolve(
+        new Response(JSON.stringify([mockBookResponse[0]]), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
   );
 
   try {
@@ -81,10 +83,12 @@ Deno.test("fetchBooksByISBN - multiple ISBNs success", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response(JSON.stringify(mockBookResponse), {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      })),
+      Promise.resolve(
+        new Response(JSON.stringify(mockBookResponse), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
   );
 
   try {
@@ -141,10 +145,12 @@ Deno.test("fetchBooksByISBN - HTTP error", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response("Not Found", {
-        status: 404,
-        statusText: "Not Found",
-      })),
+      Promise.resolve(
+        new Response("Not Found", {
+          status: 404,
+          statusText: "Not Found",
+        }),
+      ),
   );
 
   try {
@@ -165,10 +171,12 @@ Deno.test("fetchBooksByISBN - invalid JSON response", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response("invalid json", {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      })),
+      Promise.resolve(
+        new Response("invalid json", {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
   );
 
   try {
@@ -189,10 +197,12 @@ Deno.test("fetchBooksByISBN - schema validation error", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response(JSON.stringify(invalidResponse), {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      })),
+      Promise.resolve(
+        new Response(JSON.stringify(invalidResponse), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
   );
 
   try {
@@ -216,10 +226,12 @@ Deno.test("fetchCoverage - success", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response(JSON.stringify(mockCoverageResponse), {
-        status: 200,
-        headers: { "content-type": "application/json" },
-      })),
+      Promise.resolve(
+        new Response(JSON.stringify(mockCoverageResponse), {
+          status: 200,
+          headers: { "content-type": "application/json" },
+        }),
+      ),
   );
 
   try {
@@ -244,10 +256,12 @@ Deno.test("fetchCoverage - error", async () => {
     globalThis,
     "fetch",
     () =>
-      Promise.resolve(new Response("Internal Server Error", {
-        status: 500,
-        statusText: "Internal Server Error",
-      })),
+      Promise.resolve(
+        new Response("Internal Server Error", {
+          status: 500,
+          statusText: "Internal Server Error",
+        }),
+      ),
   );
 
   try {
