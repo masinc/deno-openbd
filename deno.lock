@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@std/assert@1": "1.0.13",
     "jsr:@std/internal@^1.0.6": "1.0.8",
+    "npm:neverthrow@^8.2.0": "8.2.0",
     "npm:zod@^3.23.8": "3.25.64"
   },
   "jsr": {
@@ -17,6 +18,17 @@
     }
   },
   "npm": {
+    "@rollup/rollup-linux-x64-gnu@4.43.0": {
+      "integrity": "sha512-jAHr/S0iiBtFyzjhOkAics/2SrXE092qyqEg96e90L3t9Op8OTzS6+IX0Fy5wCt2+KqeHAkti+eitV0wvblEoQ==",
+      "os": ["linux"],
+      "cpu": ["x64"]
+    },
+    "neverthrow@8.2.0": {
+      "integrity": "sha512-kOCT/1MCPAxY5iUV3wytNFUMUolzuwd/VF/1KCx7kf6CutrOsTie+84zTGTpgQycjvfLdBBdvBvFLqFD2c0wkQ==",
+      "optionalDependencies": [
+        "@rollup/rollup-linux-x64-gnu"
+      ]
+    },
     "zod@3.25.64": {
       "integrity": "sha512-hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g=="
     }
@@ -24,6 +36,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
+      "npm:neverthrow@^8.2.0",
       "npm:zod@^3.23.8"
     ]
   }
