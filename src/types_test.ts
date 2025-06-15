@@ -1,20 +1,20 @@
 import { assertEquals } from "@std/assert";
 import {
-  BookSchema,
-  CoverageResponseSchema,
-  HanmotoSchema,
-  OnixSchema,
-  OpenBDResponseSchema,
-  SummarySchema,
-  isValidBook,
-  isValidResponse,
   type Book,
   type BookInfo,
+  BookSchema,
   type CoverageResponse,
+  CoverageResponseSchema,
   type Hanmoto,
+  HanmotoSchema,
+  isValidBook,
+  isValidResponse,
   type Onix,
+  OnixSchema,
   type OpenBDResponse,
+  OpenBDResponseSchema,
   type Summary,
+  SummarySchema,
 } from "./types.ts";
 
 // Test Summary schema
@@ -355,7 +355,7 @@ Deno.test("TypeScript type inference", () => {
   const bookInfo: BookInfo = {
     isbn: "9784101092058",
     title: "Test Book",
-    author: "Test Author", 
+    author: "Test Author",
     publisher: "Test Publisher",
     publishedDate: "2023-01-01",
   };

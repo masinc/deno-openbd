@@ -126,7 +126,10 @@ Deno.test("fetchBooksByISBN - network error", async () => {
     assertEquals(result.isErr(), true);
     if (result.isErr()) {
       assertEquals(result.error.type, "network");
-      assertEquals(result.error.message, "Failed to fetch data from OpenBD API");
+      assertEquals(
+        result.error.message,
+        "Failed to fetch data from OpenBD API",
+      );
     }
   } finally {
     fetchStub.restore();

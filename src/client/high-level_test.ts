@@ -123,15 +123,19 @@ Deno.test("Error type validation", () => {
 
   // Test other error types
   const parseError = { type: "parse" as const, message: "Parse failed" };
-  const validationError = { type: "validation" as const, message: "Validation failed" };
-  
+  const validationError = {
+    type: "validation" as const,
+    message: "Validation failed",
+  };
+
   assertEquals(parseError.type, "parse");
   assertEquals(validationError.type, "validation");
 });
 
 // Basic schema validation test
 Deno.test("Schema exports validation", async () => {
-  const { BookSchema, OpenBDResponseSchema, CoverageResponseSchema } = await import("../types.ts");
+  const { BookSchema, OpenBDResponseSchema, CoverageResponseSchema } =
+    await import("../types.ts");
 
   // Test schemas exist and have parse methods
   assertEquals(typeof BookSchema.parse, "function");
@@ -160,8 +164,13 @@ Deno.test("URL construction logic", () => {
 
   // Test multiple ISBNs URL
   const multipleISBNs = ["9784101092058", "9784062748895"];
-  const multipleURL = `${BASE_URL}/get?isbn=${encodeURIComponent(multipleISBNs.join(","))}`;
-  assertEquals(multipleURL, "https://api.openbd.jp/v1/get?isbn=9784101092058%2C9784062748895");
+  const multipleURL = `${BASE_URL}/get?isbn=${
+    encodeURIComponent(multipleISBNs.join(","))
+  }`;
+  assertEquals(
+    multipleURL,
+    "https://api.openbd.jp/v1/get?isbn=9784101092058%2C9784062748895",
+  );
 
   // Test coverage URL
   const coverageURL = `${BASE_URL}/coverage`;
@@ -185,6 +194,9 @@ Deno.test("Error message construction", () => {
     cause: new Error("Schema validation failed"),
   };
   assertEquals(validationError.type, "validation");
-  assertEquals(validationError.message, "Invalid response format from OpenBD API");
+  assertEquals(
+    validationError.message,
+    "Invalid response format from OpenBD API",
+  );
   assertEquals(validationError.cause?.message, "Schema validation failed");
 });
