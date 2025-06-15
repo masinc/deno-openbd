@@ -1,0 +1,12 @@
+
+/node_modules
+
+.env
+
+*.orig
+*.pyc
+*.swp
+
+# Coverage files
+coverage/
+coverage.lcov
