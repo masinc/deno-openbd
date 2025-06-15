@@ -19,7 +19,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - 包括的なテスト実装 (Issue #5)
   - 単体テスト 27個 - 低レベルAPI、高レベルAPI、型定義テスト
   - 統合テスト 7個 - 実際のOpenBD APIとの通信テスト
-  - テストタスクの分離 (`deno task test`, `deno task test:integration`, `deno task test:all`)
+  - テストタスクの分離 (`deno task test`, `deno task test:integration`,
+    `deno task test:all`)
   - @std/testing依存関係追加によるモック機能活用
 - テストドキュメント (`docs/testing.md`)
   - テスト戦略、実行方法、トラブルシューティング
