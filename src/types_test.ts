@@ -1,20 +1,15 @@
 import { assertEquals } from "@std/assert";
 import {
-  type Book,
-  type BookInfo,
   BookSchema,
-  type CoverageResponse,
   CoverageResponseSchema,
-  type Hanmoto,
   HanmotoSchema,
   isValidBook,
   isValidResponse,
-  type Onix,
   OnixSchema,
-  type OpenBDResponse,
   OpenBDResponseSchema,
-  type Summary,
   SummarySchema,
+  type BookInfo,
+  type Summary,
 } from "./types.ts";
 
 // Test Summary schema
