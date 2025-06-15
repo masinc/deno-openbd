@@ -3,7 +3,12 @@
   "version": "0.0.1",
   "exports": "./mod.ts",
   "tasks": {
-    "dev": "deno test --watch"
+    "dev": "deno test --watch",
+    "test": "deno test",
+    "lint": "deno lint",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
+    "check": "deno check **/*.ts && deno task lint && deno task fmt:check && deno task test"
   },
   "license": "MIT",
   "imports": {
